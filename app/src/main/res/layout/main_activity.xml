@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/btn_refresh"
+        android:layout_width="82dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="0dp"
+        android:backgroundTint="@color/orange"
+        android:drawableLeft="@drawable/ref"
+        android:textColor="@color/purple"
+        android:textSize="15dp"
+        android:textStyle="bold"
+        android:contentDescription="Refresh the map" />
+
+
+    <TextView
+        android:id="@+id/tv_latitude_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Latitude"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_below="@id/btn_refresh"
+        android:layout_marginTop="24dp" />
+
+    <!-- TextView to display Latitude in DD and DMS -->
+    <TextView
+        android:id="@+id/tv_latitude_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textSize="18sp"
+        android:layout_below="@id/tv_latitude_label"
+        android:layout_marginTop="8dp" />
+
+    <TextView
+        android:id="@+id/tv_longitude_label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Longitude"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:layout_below="@id/tv_latitude_value"
+        android:layout_marginTop="24dp" />
+
+
+    <TextView
+        android:id="@+id/tv_longitude_value"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="18sp"
+        android:layout_below="@id/tv_longitude_label"
+        android:layout_marginTop="8dp" />
+
+
+    <TextView
+        android:id="@+id/tv_street_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Street Name: "
+        android:textSize="17sp"
+        android:layout_below="@id/tv_longitude_value"
+        android:layout_marginTop="24dp" />
+
+    <!-- WebView to display Map -->
+    <androidx.cardview.widget.CardView
+        android:layout_width="395dp"
+        android:layout_height="288dp"
+        android:layout_below="@id/tv_street_name"
+        android:layout_marginTop="24dp"
+        app:cardCornerRadius="16dp"
+        app:cardElevation="4dp">
+
+        <WebView
+            android:id="@+id/webview_map"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@android:color/transparent" />
+    </androidx.cardview.widget.CardView>
+
+    <com.google.android.gms.ads.AdView
+        android:id="@+id/adView"
+        android:layout_width="378dp"
+        android:layout_height="104dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="0dp"
+        app:adSize="BANNER"
+        app:adUnitId="ca-app-pub-8703838614460129/4724990288" />
+
+
+</RelativeLayout>
